@@ -3,170 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VXRG Security | Professional Cyber Defense</title>
+    <title>VXRG | Global Cyber Defense & Intelligence</title>
     <style>
         :root {
             --primary-green: #00ff41;
-            --dark-bg: #0a0a0a;
-            --card-bg: #111111;
-            --text-gray: #a0a0a0;
+            --bg-black: #050505;
+            --surface-dark: #0f0f0f;
+            --border-color: #1a1a1a;
+            --text-main: #e0e0e0;
+            --text-dim: #888888;
         }
 
-        body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--bg-black); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
-        nav {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo { font-size: 22px; font-weight: 800; color: var(--primary-green); letter-spacing: 3px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .brand { font-size: 1.6rem; font-weight: 800; color: var(--primary-green); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-green); }
 
         /* Hero Section */
-        .hero {
-            padding: 100px 10% 60px;
-            text-align: center;
-            background: radial-gradient(circle at center, #003311 0%, #0a0a0a 70%);
-        }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: radial-gradient(circle at center, #111 0%, #050505 100%); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -1px; }
+        .hero p { color: var(--text-dim); max-width: 600px; font-size: 1.1rem; margin-bottom: 30px; }
+        .btn-main { padding: 12px 35px; border: 1px solid var(--primary-green); color: var(--primary-green); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
+        .btn-main:hover { background: var(--primary-green); color: black; box-shadow: 0 0 20px rgba(0, 255, 65, 0.4); }
 
-        .hero h1 { font-size: 4em; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { color: var(--text-gray); font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; }
-
-        .btn-main {
-            background: var(--primary-green);
-            color: #000;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn-main:hover { box-shadow: 0 0 20px var(--primary-green); transform: scale(1.05); }
-
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 40px 10%;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-green);
-            text-align: center;
-        }
-
-        /* Services */
-        .section-title { text-align: center; font-size: 2.5em; margin: 60px 0 40px; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 10% 80px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #222;
-            transition: 0.4s;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary-green);
-            background: #161616;
-        }
-
-        .service-card h3 { color: var(--primary-green); margin-bottom: 15px; }
+        /* Services Section */
+        .services { padding: 100px 8%; background: var(--bg-black); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2rem; color: var(--primary-green); margin-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: var(--surface-dark); padding: 40px; border: 1px solid var(--border-color); border-radius: 4px; transition: 0.4s; }
+        .service-card:hover { border-color: var(--primary-green); transform: translateY(-10px); }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: white; }
+        .service-card p { color: var(--text-dim); font-size: 0.95rem; }
 
         /* Footer */
-        footer {
-            background: #050505;
-            padding: 40px 10%;
-            border-top: 1px solid #222;
-            text-align: center;
-            color: #555;
-        }
-
-        .badge {
-            display: inline-block;
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-        }
+        footer { padding: 60px 8%; border-top: 1px solid var(--border-color); text-align: center; background: #000; }
+        .footer-text { color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">VXRG SECURITY</div>
-    <div style="font-size: 0.8em; color: #555;">LEAD RESEARCHER: HACKER</div>
+    <div class="brand">VXRG™</div>
+    <div class="nav-links">
+        <a href="#">Network</a>
+        <a href="#">Cloud Security</a>
+        <a href="#">Intelligence</a>
+    </div>
 </nav>
 
 <section class="hero">
-    <div class="badge">SECURED BY VXRG GENIX</div>
-    <h1>The Future of Cyber Defense</h1>
-    <p>Providing advanced security auditing, vulnerability research, and digital protection for global infrastructures.</p>
-    <a href="#" class="btn-main">Get a Security Audit</a>
+    <h1>Securing the Digital Frontier</h1>
+    <p>Advanced Vulnerability Research & Tactical Cyber Defense Solutions for Enterprise Infrastructure.</p>
+    <a href="#" class="btn-main">Get Secure Now</a>
 </section>
 
-<div class="stats-grid">
-    <div class="stat-card">
-        <h3>NASA VDP</h3>
-        <p>Recognized Contributor</p>
+<section class="services">
+    <div class="section-title">
+        <h2>Our Core Capabilities</h2>
+        <p style="color: var(--text-dim);">Engineered for high-stakes digital environments.</p>
     </div>
-    <div class="stat-card">
-        <h3>OSCP / CEH</h3>
-        <p>Future Roadmap</p>
+    <div class="grid">
+        <div class="service-card">
+            <h3>Vulnerability Disclosure</h3>
+            <p>Identifying and mitigating critical security flaws before they are exploited. Trusted by top-tier agencies.</p>
+        </div>
+        <div class="service-card">
+            <h3>Penetration Testing</h3>
+            <p>Comprehensive offensive security assessments to strengthen organizational resilience.</p>
+        </div>
+        <div class="service-card">
+            <h3>Global Threat Intel</h3>
+            <p>Real-time monitoring and analysis of emerging cyber threats across international borders.</p>
+        </div>
     </div>
-    <div class="stat-card">
-        <h3>Switzerland</h3>
-        <p>Global Mission</p>
-    </div>
-</div>
-
-<h2 class="section-title">Core Operations</h2>
-<div class="services-grid">
-    <div class="service-card">
-        <h3>Vulnerability Disclosure</h3>
-        <p>Independent security research and ethical disclosure of critical vulnerabilities in enterprise systems.</p>
-    </div>
-    <div class="service-card">
-        <h3>Penetration Testing</h3>
-        <p>Simulating real-world cyber attacks to identify and patch security gaps before malicious actors find them.</p>
-    </div>
-    <div class="service-card">
-        <h3>Digital Forensics</h3>
-        <p>Analyzing system breaches and providing comprehensive technical reports on security incidents.</p>
-    </div>
-</div>
+</section>
 
 <footer>
-    <p>&copy; 2026 VXRG Security | Valthronis Xyro Genix. All Rights Reserved.</p>
-    <p style="font-size: 0.8em; margin-top: 10px;">Managed by Hacker | Cybersecurity Researcher</p>
+    <p class="footer-text">© 2026 VALTHRONIS XYRO GENIX (VXRG) GLOBAL. OPERATING WORLDWIDE. <br> 
+    SWITZERLAND | GLOBAL OPERATIONS | QUANTUM SECURE</p>
 </footer>
 
 </body>
